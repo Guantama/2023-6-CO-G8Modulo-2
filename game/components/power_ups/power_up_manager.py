@@ -11,12 +11,12 @@ from game.utils.constants import  SCREEN_WIDTH, SHIELD_TYPE, SPACESHIP_SHIELD
 
 class PowerUpManager:
     MIN_TIME_POWER_UP = 5000
-    MAX_TIME_POWER_UP = 10000
+    MAX_TIME_POWER_UP = 13000
 
     def __init__(self):
         self.power_ups = []
         self.duration = random.randint(3, 5)
-        self.when_appears = random.randint(5000, 10000)
+        self.when_appears = random.randint(5000, 13000)
 
     def update(self, game):
         current_time = pygame.time.get_ticks()
@@ -31,7 +31,7 @@ class PowerUpManager:
                 power_up.start_time = pygame.time.get_ticks()
                 game.player.power_up_type = power_up.type
                 game.player.has_power_up = True
-                game.player.power_time_up = power_up.start_time + (self.duration * 2300)
+                game.player.power_time_up = power_up.start_time + (self.duration * 2000)
                 if game.player.power_up_type == SHIELD_TYPE:
                     game.player.set_image((65, 75), SPACESHIP_SHIELD)
                     self.power_ups = []
@@ -52,9 +52,9 @@ class PowerUpManager:
 
     def generate_power_up(self):
         power_up_types = [Shield(), Heart(), Bomb()]
-        while len(self.power_ups) < 3:  # Limitamos a 3 power-ups en pantalla
+        while len(self.power_ups) < 3:  # Limitamos a 3 en pantalla
             power_up = random.choice(power_up_types)
-            power_up.rect.x = random.randint(120, SCREEN_WIDTH - 120)
+            power_up.rect.x = random.randint(12, SCREEN_WIDTH - 12)
             power_up.rect.y = 0
             collides = pygame.sprite.spritecollide(power_up, self.power_ups, False)
             if not collides:

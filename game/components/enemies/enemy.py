@@ -24,7 +24,7 @@ class Enemy(Sprite):
         self.move_x_for = random.randint(30, 100)
         self.index = 0
         self.type = 'enemy'
-        self.shooting_time = pygame.time.get_ticks()+500
+        self.shooting_time = pygame.time.get_ticks()+ 300
         self.shoot_num = 0
 
     def update(self, ships,game):

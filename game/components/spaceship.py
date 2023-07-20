@@ -4,7 +4,7 @@ from pygame.sprite import  Sprite
 from game.components.bullets.bullet import Bullet
 from game.utils.constants import DEFAULT_TYPE, SCREEN_HEIGHT,SCREEN_WIDTH,SPACESHIP
 class Spaceship (Sprite):
-    SHIP_WIDTH = 60
+    SHIP_WIDTH = 70
     SHIP_HEIGHT = 60
     X_POS = (SCREEN_WIDTH // 2) - SHIP_HEIGHT
     Y_POS = 500
@@ -20,7 +20,7 @@ class Spaceship (Sprite):
         self.power_up_type = DEFAULT_TYPE
         self.has_power_up = False
         self.power_time_up = 0
-        self.shoot_delay = 250
+        self.shoot_delay = 200
         self.lives = 3
         self.hidden = False
         self.last_shot = pygame.time.get_ticks()
