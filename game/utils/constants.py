@@ -10,10 +10,19 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "Spaceship/spaceship.png"))
+SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/escudo.png'))
 
-SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
+EXPLOSION_ANIM = []
+for i in range (1,19):
+    file = 'Other/{}.png'.format(i)
+    img = pygame.image.load(os.path.join(IMG_DIR,file))
+    img = pygame.transform.scale(img,(40,40))
+    EXPLOSION_ANIM.append(img)
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
+
+IMG_M = pygame.image.load(os.path.join(IMG_DIR, 'Other/FondoMenu.png'))
+IMG_S = pygame.image.load(os.path.join(IMG_DIR, 'Other/fondoscore.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
@@ -27,5 +36,7 @@ BULLET = pygame.image.load(os.path.join(IMG_DIR, "Bullet/bullet_1.png"))
 BULLET_ENEMY = pygame.image.load(os.path.join(IMG_DIR, "Bullet/bullet_2.png"))
 ENEMY_1 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_1.png"))
 ENEMY_2 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_2.png"))
+
+MISILE = pygame.image.load(os.path.join(IMG_DIR, 'Other/bombcrab.png'))
 
 FONT_STYLE = 'freesansbold.ttf'
