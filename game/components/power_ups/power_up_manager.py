@@ -3,7 +3,7 @@ import random
 import pygame
 from game.components.explosion import Explosion
 from game.components.power_ups.hearth import Heart
-from game.components.power_ups.misile import Misile
+from game.components.power_ups.bomb import Bomb
 from game.components.power_ups.shield import Shield
 
 from game.utils.constants import  SCREEN_WIDTH, SHIELD_TYPE, SPACESHIP_SHIELD
@@ -38,7 +38,7 @@ class PowerUpManager:
                 elif game.player.power_up_type == "Heart":
                     game.player.lives += 1
                     self.power_ups = []
-                elif game.player.power_up_type == "Misile":
+                elif game.player.power_up_type == "Bomb":
                     for enemy in game.enemy_manager.enemies:
                         explode = Explosion(enemy.rect.center)
                         game.all_sprites.add(explode)
@@ -51,7 +51,7 @@ class PowerUpManager:
             power_up.draw(screen)
 
     def generate_power_up(self):
-        power_up_types = [Shield(), Heart(), Misile()]
+        power_up_types = [Shield(), Heart(), Bomb()]
         while len(self.power_ups) < 3:  # Limitamos a 3 power-ups en pantalla
             power_up = random.choice(power_up_types)
             power_up.rect.x = random.randint(120, SCREEN_WIDTH - 120)

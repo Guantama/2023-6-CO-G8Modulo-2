@@ -1,12 +1,7 @@
-
 import time
 import pygame
 from game.components.explosion import Explosion
-
-
 from game.utils.constants import SHIELD_TYPE
-
-
 class BulletManager:
     def __init__(self):
         self.bullets = []
@@ -31,9 +26,6 @@ class BulletManager:
                         pygame.time.delay(2000)
                         break
                 
-
-
-        
         for bullet in self.bullets:
             bullet.update(self.bullets)
             delete=enemy_manager.destroy_enemy(bullet,game)
