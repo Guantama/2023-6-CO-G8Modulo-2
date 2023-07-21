@@ -125,7 +125,7 @@ class Game:
             if time_to_show >=0:
                 if self.player.power_up_type == SHIELD_TYPE:
                     font = pygame.font.Font(FONT_STYLE, 30)
-                    text = font.render(f'{self.player.power_up_type.capitalize()} is enable for {time_to_show} seconds', True, (255,255,0))
+                    text = font.render(f'{self.player.power_up_type.capitalize()} is enabled for {time_to_show} seconds', True, (255,255,0))
                     text_rect = text.get_rect()
                     self.screen.blit(text,(540, 50))
             else:
